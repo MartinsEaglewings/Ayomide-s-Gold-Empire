@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayomide Gold Empire</title>
+    <style>
+        :root { --gold: #D4AF37; --bg: #0a0a0a; }
+        body { background: var(--bg); color: #fff; font-family: sans-serif; margin: 0; text-align: center; }
+        
+        header { padding: 40px; border-bottom: 3px solid var(--gold); }
+        h1 { color: var(--gold); margin: 0; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+        
+        .card { background: #1a1a1a; border-radius: 15px; overflow: hidden; border: 1px solid #333; cursor: pointer; }
+        
+        /* This box holds your image */
+        .card img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; }
+        .modal-content { background: #222; padding: 30px; border-radius: 20px; border: 2px solid var(--gold); width: 80%; max-width: 300px; }
+        .order-btn { background: var(--gold); color: black; padding: 15px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; display: block; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AYOMIDE GOLD EMPIRE</h1>
+    </header>
+
+    <div class="grid">
+        <div class="card" onclick="openModal('Fancy Ladies bag')">
+            <img src="fancybags.jpg" alt="Fancy Bag">
+            <h3>Fancy bag</h3>
+        </div>
+
+        <div class="card" onclick="openModal('Jewelries')">
+            <img src="jewelries.jpg" alt="Jewelries">
+            <h3>Jewelries</h3>
+        </div>
+        
+        <div class="card" onclick="openModal('Ladies footwears')">
+            <img src="female footwears.jpg" alt="Ladies footwears">
+            <h3>Ladies footwears</h3>
+        </div>
+        
+        <div class="card" onclick="openModal('Rechargeable fan')">
+            <img src="Rechargeable fan.jpg" alt="Rechargeable fan">
+            <h3>Rechargeable fan</h3>
+        </div>
+        
+        <div class="card" onclick="openModal('Leather bags')">
+            <img src="Leather bags.jpg" alt="Leather bags">
+            <h3>Leather bags</h3>
+        </div>
+     </div>
+
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <h2 id="modalTitle" style="color:var(--gold)">Order</h2>
+            <a href="tel:+2349130707344" class="order-btn">CALL TO ORDER</a>
+            <p onclick="closeModal()" style="color:#777; margin-top:20px; cursor:pointer">Cancel</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(itemName) {
+            document.getElementById('modalTitle').innerText = "Order " + itemName;
+            document.getElementById('orderModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
